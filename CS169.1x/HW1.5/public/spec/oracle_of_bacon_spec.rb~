@@ -5,7 +5,7 @@ require 'debugger'
 
 describe OracleOfBacon do
   before(:all) { FakeWeb.allow_net_connect = false }
-  describe 'instance' do
+  describe 'instance', :pending => true do
     before(:each) { @orb = OracleOfBacon.new('fake_api_key') }
     describe 'when new' do
       subject { @orb }
@@ -67,7 +67,7 @@ describe OracleOfBacon do
       its(:data) { should match /unknown/i }
     end
   end
-  describe 'constructing URI', :pending => true do
+  describe 'constructing URI' do
     subject do
       oob = OracleOfBacon.new('fake_key')
       oob.from = '3%2 "a' ; oob.to = 'George Clooney'
