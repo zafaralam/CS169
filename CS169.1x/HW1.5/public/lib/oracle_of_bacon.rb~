@@ -10,7 +10,7 @@ class OracleOfBacon
   class NetworkError < RuntimeError ; end
   class InvalidKeyError < RuntimeError ; end
 
-  attr_reader :from, :to
+  attr_accessor :from, :to
   attr_reader :api_key, :response, :uri
   
   include ActiveModel::Validations
@@ -31,15 +31,12 @@ class OracleOfBacon
 
   def from_does_not_equal_to
     # YOUR CODE HERE
-    puts "#{@from} : #{@to}"
-    return true if @from != @to
+    return false if @from.eql?@to && @from != 'Kevin Bacon'
   end
 
   def initialize(api_key='')
     # your code here
     @api_key = api_key
-    #@from = 'Kevin Bacon'
-    #@to = 'Kevin Bacon'
   end
 
   def find_connections
@@ -59,11 +56,11 @@ class OracleOfBacon
   def make_uri_from_arguments
     # your code here: set the @uri attribute to properly-escaped URI
     #   constructed from the @from, @to, @api_key arguments
-    @uri = URI::HTTP.build({:host => 'oracleofbacon.org', :path => '/cgi-bin/xml'})
-    params = "p=#{URI.escape(@api_key.to_s)}&a=#{URI.escape(@from.to_s)}&b=#{URI.escape(@to.to_s)}&"
-    @uri.query = params
-    #@uri.query_values = {:p => @api_key,:a => @from,:b => @to} 
-    #"http://oracleofbacon.org/cgi-bin/xml?p=#{@api_key}&a=#{@from}&b=#{@to}"
+    params = "p=#{URI.escape(@api_key.to_s)}&a=#{URI.escape(@from.to_s)}&b=#{URI.escape(@to.to_s)}"
+    host = "oracleofbacon.org"
+    path = "/cgi-bin/xml"
+    @uri = URI::HTTP.build({:host => host, :path => path,:query => params})
+    puts "#{@uri}"
   end
       
   class Response
@@ -127,4 +124,10 @@ class OracleOfBacon
     end
   end
 end
+
+#oob = OracleOfBacon.new('38b99ce9ec87')
+
+# connect Laurence Olivier to Kevin Bacon
+#oob.from = 'Laurence Olivier'
+#puts oob.from_does_not_equal_to
 
