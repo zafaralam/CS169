@@ -1,0 +1,94 @@
+/*
+	PSEUDOCLASSES example for <a> tag
+*/
+a:link {
+	color: #0000FF;
+	text-decoration: none;
+}
+a:active {
+	color: #FF0000;
+	background-color: #FFFFCC;
+}
+a:focus {
+	border-style: dashed;
+	border-width: 1px;
+	background-color: #FFA500;
+}
+a:hover {
+	color: #FF0000;
+	text-decoration: underline;
+}
+a:visited {
+	color: #A020F0;
+	text-decoration: none;
+}
+
+/*
+	PSEUDO-ELEMENTS example with <p> tag
+*/
+
+p:first-line {
+	background-color: yellow;
+}
+p:first-letter {
+	color: red;
+	font-size: 150%;
+}
+
+/*
+	CONTEXTUAL SELECTION example using <p> & <strong> tag
+*/
+
+/* 
+	All <strong> elements within the <p> tag will have this style regardless of weather they
+	appear directly after the parent or not.
+*/
+p strong {
+	background-color: lightgray;
+}
+
+p > strong {
+	background-color:lightgreen; 
+}
+
+/* Table */
+table{border-collapse: collapse;}			
+th , td {
+	border: 1px solid black;
+	padding: 5px;	
+}
+
+th{
+	border-bottom-width: 3px;
+	text-align: left;
+	background-color: grey;	
+	color: whitesmoke;
+	min-width: 100px;
+	line-height: 30px;
+	font-size: 18px;
+	font-weight: bolder;			
+}
+
+th[title='example']{
+	width: 600px;			
+}
+
+th[title='desc']{
+	width: 300px;			
+}
+
+th[title="list"] {
+	width: 800px;
+}
+
+p.topic1:first-line {
+	background-color: white;	
+}
+	
+p.topic1 b {
+	font-style: italic;	font-weight: normal;
+}
+
+p.topic1 i {
+	font-style: normal; font-weight: bold;
+}

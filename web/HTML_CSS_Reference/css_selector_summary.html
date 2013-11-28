@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>CSS Selector Summary</title>
+		<link rel="stylesheet" href="css/main.css" />
+    	<script type="text/javascript" src="js/main.js"></script>
+	</head>
+	<body>
+		<h1>CSS Selector Summary</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Selector</th>
+					<th title="desc">Description</th>
+					<th title="example">Example</th>
+					<th>Defined In</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>E</td>
+					<td>Selects all E of the name specified in the rule</td>
+					<td>h1 {color: red;}<br />/* makes all h1 tags red */</td>
+					<td>CSS1</td>
+				</tr>
+				<tr>
+					<td>*</td>
+					<td>Selects all elements</td>
+					<td>* {color: red;}<br />/* makes all elements red */</td>
+					<td>CSS2</td>
+				</tr>				
+				<tr>
+					<td>#id</td>
+					<td>Selects any tag with the id attribute set.</td>
+					<td>#test {color: green;}<br />/* makes a tag with id='test' green */</td>
+					<td>CSS1</td>
+				</tr>
+				<tr>
+					<td>.class</td>
+					<td>Selects any tag with the specified class value.</td>
+					<td>.note {color: green;}<br />/* makes all tags with class='note' green */</td>
+					<td>CSS1</td>
+				</tr>
+				<tr>
+					<td>E.class</td>
+					<td>Selects the sepecified E with a particular class value.</td>
+					<td>h1.note {text-decoration: underline;}<br />/* underlines all H1 tags with class='note' */</td>
+					<td>CSS1</td>
+				</tr>
+				<tr>
+					<td>Grouping</td>
+					<td>Applies the same rules to a group of tags</td>
+					<td>h1,h2,h3 {backgroung-color: orange;}<br />/* sets the background color of all h1,h2 and h3 elements to orange. */</td>
+					<td>CSS1</td>
+				</tr>
+				<tr>
+					<td>E F</td>
+					<td>Selects descendent tags where F is an eventual descendent of element E</td>
+					<td>p strong {color: purple;}<br />/* sets all strong tags that are decendents of p tag purple */</td>
+					<td>CSS1</td>
+				</tr>
+				<tr>
+					<td>E > F</td>
+					<td>Selects direct descendents</td>
+					<td>body > p {background-color: yellow;}<br />/* makes all the p tags that have the body tag as their immediate parent have the background color yellow */</td>
+					<td>CSS2</td>
+				</tr>
+				<tr>
+					<td>E + F</td>
+					<td>Selects adjacent siblings</td>
+					<td>h1 + p {color: red;}<br />/* makes all the p tags that are immediately preceded by a h1 tag red */</td>
+					<td>CSS2</td>
+				</tr>
+				<tr>
+					<td>E ~ F</td>
+					<td>Selects siblings</td>
+					<td>p ~ strong {font-style: italic;}<br />/* sets the font style to italic on all strong tags that have a p tag as a preceding sibling */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>E[attr]</td>
+					<td>Selects all elements of E that have the given attribute attr</td>
+					<td>a[href] {background-color: yellow ;}<br />/* sets the background color to yellow for all a tags that have an href attribute */</td>
+					<td>CSS2</td>
+				</tr>
+				<tr>
+					<td>E[attr=value]</td>
+					<td>Selects all elements of E that have set the given attribute attr equal to the given value</td>
+					<td>a[href="http://www.htmlref.com"] {font-weight: bold;}<br />/* sets the font-weight to bold on all a tags that have their href attribute set to http://www.htmlref.com */ </td>
+					<td>CSS2</td>
+				</tr>
+				<tr>
+					<td>E[attr|=value]</td>
+					<td>Selects all elements of E that have an attribute that contains a value that starts wiht a value that is a list of hyphen-seperated values</td>
+					<td>p[lang|="en"] {color: red ;}<br />/* English text in red */</td>
+					<td>CSS2</td>
+				</tr>
+				<tr>
+					<td>E[attr~=value]</td>
+					<td>Selects all elements of E that have a space-seperated list of values for attr where one of those values is equal to the given value</td>
+					<td>p[title~= "Test"] {color: yellow;}<br />/* sets the font style to italic on all p tags that have one word in their title equal to Test */</td>
+					<td>CSS2</td>
+				</tr>
+				<tr>
+					<td>E[attr^=value]</td>
+					<td>Selectes all elements of E that have the attribute that begins with the givem value</td>
+					<td>p[title^="HTML"] {color: green;}<br />/* sets the color to green if the title starts with HTML */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>E[attr$=value]</td>
+					<td>Selects all elements of E that have the attribute attr that ends with the given value</td>
+					<td>p[title$="!"] {color: red;}<br />/* sets the color of red of the title ends with an exclamation mark */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>E[attr*=value]</td>
+					<td>Selects all elements of E that have the attribute attr that contains the given value</td>
+					<td>p[title*="CSS"] {font-style: italic;}<br />/* sets font style to italic in any p tag that has CSS in its title */</td>
+					<td>CSS</td>
+				</tr>
+				<tr>
+					<td>:first-line</td>
+					<td>Selects the first line of an element</td>
+					<td>p:first-line {color: red;}<br />/* makes the first line of the paragraph red. */</td>
+					<td>CSS1</td>
+				</tr>
+				<tr>
+					<td>:first-letter</td>
+					<td>Selects the first letter of an element</td>
+					<td>p:first-letter {font-size: larger;}<br />/* makes the first letter of the pragraph larger */</td>
+					<td>CSS1</td>
+				</tr>
+				<tr>
+					<td>:before</td>
+					<td>Selects a style to be used immediately before the element</td>
+					<td>div:before {content: url(sectionstart.gif);}<br />/* inserts the selectionstart.gif image before all div tags */</td>
+					<td>CSS2</td>
+				</tr>
+				<tr>
+					<td>:after</td>
+					<td>selects a style to be used immediately following the element</td>
+					<td>div:after {content: url(sectionend.gif);}<br />/* inserts the selectionend.gif immediately following all div tags */</td>
+					<td>CSS2</td>
+				</tr>
+				<tr>
+					<td>::selection</td>
+					<td>Selects the part of the element that is currently selected; supported in Firefoc as ::moz-selection as well</td>
+					<td>#test::selection {color: red ;}<br />/* makes the text red when selected */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>a:link</td>
+					<td>Specifies the unvisited links.</td>
+					<td>a:link {font-weight: bold;}<br />/* makes unvisited links bold */</td>
+					<td>CSS1</td>
+				</tr>
+				<tr>
+					<td>a:active</td>
+					<td>Specifies the link as it is being pressed.</td>
+					<td>a:active {color: red;}<br />/* makes links red as they are pressed */</td>
+					<td>CSS1</td>
+				</tr>
+				<tr>
+					<td>a:visited</td>
+					<td>Specifies link after being pressed.</td>
+					<td>a:link {text-decoration: line-through;}<br />/* puts a line through visited links */</td>
+					<td>CSS1</td>
+				</tr>
+				<tr>
+					<td>:hover</td>
+					<td>Selects the element when the user is hovering over it.</td>
+					<td>p:hover {background-color: yellow;}<br />/* sers the background-color of to yellow on the p element that the user is currently hovering over */</td>
+					<td>CSS2</td>
+				</tr>
+				<tr>
+					<td>:target</td>
+					<td>Selects the element that is the target of a referring URI</td>
+					<td>:target {color: red;}<br />/* if the element is the target of the referring URI, the color id set to red */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:focus</td>
+					<td>Selects the element only when the element holds focus.</td>
+					<td>input:focus {background-color: yellow;}<br />/* sets the background color to yellow on the input element that has focus */</td>
+					<td>CSS2</td>
+				</tr>
+				<tr>
+					<td>:enabled</td>
+					<td>Selects the elements that are currntly enabled.</td>
+					<td>input:enabled {background-color: white;}<br />/* sets the background color to white on enabled input elements */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:disabled</td>
+					<td>Selects the elements that are currently diabled</td>
+					<td>input:disabled {background-color: gray;}<br />/* sets the background color to gray on disabled input element */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:checked</td>
+					<td>Selects the elements that are currently checked.</td>
+					<td>:checked {color: blue;}<br />/* sets the color to blue if an element is checked */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:default</td>
+					<td>Selects the elemnets that are the default amoung a set of similar elements</td>
+					<td>:default {background-color: red;}<br />/* sets the background color of a default button like a submit to red */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:first-child</td>
+					<td>Selects the element only if the element is the first child ofits parent</td>
+					<td>p:first-child {color: red;}<br />/* sets the font color to red for all of the p tags that are the first child of their parent */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:last-child</td>
+					<td>Selects the element that is the last child of its parent</td>
+					<td>p:last-child {font-size: small}<br />/* sets the font size to small for all of the p tags that are the last child of their parent */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:first-of-type</td>
+					<td>Selects the element that is the first child of its parent that is of the type.</td>
+					<td>strong:first-of-type{font-size: bigger;}<br />/* sets the font size bigger on the first strong tag of its parent */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:last-of-type</td>
+					<td>Selects the element that is the last child of its parent that is of the type.</td>
+					<td>strong:last-of-type{font-size: smaller;}<br />/* sets the font size smaller on the last strong tag of its parent */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:only-child</td>
+					<td>Selects an element if it’s the only child of its parent</td>
+					<td>h1:only-child {color: blue;}<br />/* sets the h1 color to blue if the h1 is the only child of its parent */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:only-of-type</td>
+					<td>Selects an element if it’s the only child of its parent with its type</td>
+					<td>p:only-of-type {font-weight: bold;}<br />/* sets the p element to be bold if it is the only p tag child of its parent  */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:nth-child(n)</td>
+					<td>Selects the element that is the nth child of its parent</td>
+					<td>div:nth-child(2) {background-color: red;} <br />/* sets the background color to red if the div is its parent’s second child */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:nth-last-child(n)</td>
+					<td>Selects the element that is the nth-from-last child of its parent</td>
+					<td>p:nth-last-child(3) {color: yellow;}<br />/* sets the color to yellow if the p element is its parent’s 3rd to last child */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:nth-of-type(n)</td>
+					<td>Selects the element that is the nth child of its parent that is its type</td>
+					<td>strong:nth-of-type(5) {text-decoration: underline;}<br />/* underlines the fifth strong tag under a parent */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:nth-last-of-type(n)</td>
+					<td>Selects the element that is the nth-from-last child of its parent that is its type</td>
+					<td>p:nth-last-of-type(2) {color: purple;}<br />/* sets the color to purple on the second to last p element of its parent */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:root</td>
+					<td>Selects the element that is the root of the document </td>
+					<td>:root {background-color: blue;}<br />/* sets the background color to blue for the root element */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:empty</td>
+					<td>Selects an element that has no children</td>
+					<td>div:empty {display: none;} <br />/* hides the div if it has no children */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:not(s)</td>
+					<td>Selects elements that do not match the selector s</td>
+					<td>*:not(h1) {color: black;}<br />/* sets the color to black on every element that is not an h1 tag */</td>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<td>:lang(value)</td>
+					<td>Selects all elements that have the lang attribute set to the given value </td>
+					<td>*:lang(fr) {color: blue;}<br />/* sets the font color to blue 	for every element that has the attribute lang set to 'fr' */</td>
+					<td>CSS2</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
